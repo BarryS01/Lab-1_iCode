@@ -17,11 +17,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
@@ -37,20 +32,7 @@ namespace WindowsFormsApp2
 
         }
 
-        private void label18_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -67,13 +49,13 @@ namespace WindowsFormsApp2
             discount.Text = String.Empty;
             payDate.Text = String.Empty;
             dumpQnty.Text = String.Empty;
-            dumpPrc.Text = String.Empty;
+          
             dumpAmnt.Text = String.Empty;
             exQnty.Text = String.Empty;
-            exPrc.Text = String.Empty;
+            
             exAmnt.Text = String.Empty;
             dozerQnty.Text = String.Empty;
-            dozerPrc.Text = String.Empty;
+            
             dozerAmnt.Text = String.Empty;
             totalPrc.Text = String.Empty;
             checkBox1.Checked = false;
@@ -89,13 +71,110 @@ namespace WindowsFormsApp2
             // Show receipt
             Form2 receipt = new Form2(this);
             receipt.ShowDialog();
-
-            // Show Name
-            String fName = firstName.Text;
-            String lName = lastName.Text;
-
             
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double truckQnty, excavQnty, dozeQnty;
+            double truckPrice, excavPrice, dozePrice;
+            double truckAmnt, excavAmnt, dozeAmnt;
+
+            double truckdiscount, excavdiscount, dozediscount;
+
+            truckQnty = Convert.ToDouble(dumpQnty.Text);
+            excavQnty = Convert.ToDouble(exQnty.Text);
+            dozeQnty = Convert.ToDouble(dozerQnty.Text);
+
+            truckPrice = Convert.ToDouble(dumpPrc.Text);
+            excavPrice = Convert.ToDouble(exPrc.Text);
+            dozePrice = Convert.ToDouble(dozerPrc.Text);
+
+            // Calculating Amount of Dump Truck
+            if(truckQnty >= 2)
+            {
+                truckAmnt = truckQnty * truckPrice;
+                truckdiscount = truckAmnt * 0.2;             //20% dicount
+                double newTruckAmnt = truckAmnt - truckdiscount;
+
+                dumpdis.Text = truckdiscount.ToString();
+                dumpAmnt.Text = newTruckAmnt.ToString();
+            }
+            else
+            {
+                double newTruckAmnt = truckQnty * truckPrice;
+                truckdiscount = 0;
+
+                dumpdis.Text = truckdiscount.ToString();
+                dumpAmnt.Text = newTruckAmnt.ToString();
+            }
+
+            // Calculating total Amount of Excavator
+            if (excavQnty >= 2)
+            {
+                excavAmnt = excavQnty * excavPrice;
+                excavdiscount = excavAmnt * 0.3;            // 30% discount
+                double newExcavAmnt = excavAmnt - excavdiscount;
+
+                exdis.Text = excavdiscount.ToString();
+                exAmnt.Text = newExcavAmnt.ToString();
+            }
+            else
+            {
+                double newExcavAmnt = excavQnty * excavPrice;
+                excavdiscount = 0;
+
+                exdis.Text = excavdiscount.ToString();
+                exAmnt.Text = newExcavAmnt.ToString();
+            }
+
+            // Calculating total Amount of Dozer
+            if (dozeQnty >= 2)
+            {
+                dozeAmnt = dozeQnty * dozePrice;
+                dozediscount = dozeAmnt * 0.3;           //30% discount
+                double newDozeAmnt = dozeAmnt - dozediscount;
+
+                dozerdis.Text = dozediscount.ToString();
+                dozerAmnt.Text = newDozeAmnt.ToString();
+            }
+            else
+            {
+                double newDozeAmnt = dozeQnty * dozePrice;
+                dozediscount = 0;
+
+                dozerdis.Text = dozediscount.ToString();
+                dozerAmnt.Text = newDozeAmnt.ToString();
+            }
+
+            // Instantiate new variables and assign to respective 
+            // Convert total amounts to double from string
+            // Calculating the total discount
+            double dis1, dis2, dis3;
+
+            dis1 = Convert.ToDouble(dumpdis.Text);
+            dis2 = Convert.ToDouble(exdis.Text);
+            dis3 = Convert.ToDouble(dozerdis.Text);
+
+            double totaldis = dis1 + dis2 + dis3;
+            //display in textbox
+            discount.Text = totaldis.ToString();
+
+
+            // Instantiate new variables and assign to respective 
+            // Convert total amounts to double from string
+            // Calculating Total Payment
+            double truckTotal, exTotal, dozerTotal;
+
+            truckTotal = Convert.ToDouble(dumpAmnt.Text);
+            exTotal = Convert.ToDouble(exAmnt.Text);
+            dozerTotal = Convert.ToDouble(dozerAmnt.Text);
+
+            double totalPayment = truckTotal + exTotal + dozerTotal;
+            // Display in textbox
+            totalPrc.Text = totalPayment.ToString();
+
+           
         }
     }
 }

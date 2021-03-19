@@ -53,8 +53,12 @@
             this.firstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.calcBtn = new System.Windows.Forms.Button();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.totalPrc = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.dozerAmnt = new System.Windows.Forms.TextBox();
@@ -81,10 +85,11 @@
             this.payMethod = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.printBtn = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.dumpdis = new System.Windows.Forms.TextBox();
+            this.exdis = new System.Windows.Forms.TextBox();
+            this.dozerdis = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,7 +105,6 @@
             this.label1.Size = new System.Drawing.Size(170, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "iCode Companies";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -148,12 +152,16 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitContainer1.Panel2.Controls.Add(this.dozerdis);
+            this.splitContainer1.Panel2.Controls.Add(this.exdis);
+            this.splitContainer1.Panel2.Controls.Add(this.dumpdis);
+            this.splitContainer1.Panel2.Controls.Add(this.label28);
+            this.splitContainer1.Panel2.Controls.Add(this.calcBtn);
             this.splitContainer1.Panel2.Controls.Add(this.checkBox4);
             this.splitContainer1.Panel2.Controls.Add(this.checkBox3);
             this.splitContainer1.Panel2.Controls.Add(this.checkBox2);
             this.splitContainer1.Panel2.Controls.Add(this.checkBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.resetBtn);
             this.splitContainer1.Panel2.Controls.Add(this.totalPrc);
             this.splitContainer1.Panel2.Controls.Add(this.label27);
             this.splitContainer1.Panel2.Controls.Add(this.dozerAmnt);
@@ -372,42 +380,88 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Customer Information";
             // 
-            // button2
+            // calcBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(315, 403);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.calcBtn.BackColor = System.Drawing.Color.Red;
+            this.calcBtn.Location = new System.Drawing.Point(206, 407);
+            this.calcBtn.Name = "calcBtn";
+            this.calcBtn.Size = new System.Drawing.Size(83, 31);
+            this.calcBtn.TabIndex = 33;
+            this.calcBtn.Text = "Calculate";
+            this.calcBtn.UseVisualStyleBackColor = false;
+            this.calcBtn.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
+            // checkBox4
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(206, 403);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.Location = new System.Drawing.Point(37, 218);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(118, 21);
+            this.checkBox4.TabIndex = 32;
+            this.checkBox4.Text = "Restrict Mailing";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(36, 191);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(113, 21);
+            this.checkBox3.TabIndex = 31;
+            this.checkBox3.Text = "Account on hold";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(37, 166);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(100, 21);
+            this.checkBox2.TabIndex = 30;
+            this.checkBox2.Text = "Terms Credit";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(37, 146);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(126, 21);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Can Charge Credit";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.BackColor = System.Drawing.Color.Red;
+            this.resetBtn.Location = new System.Drawing.Point(315, 405);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(77, 33);
+            this.resetBtn.TabIndex = 28;
+            this.resetBtn.Text = "Reset";
+            this.resetBtn.UseVisualStyleBackColor = false;
+            this.resetBtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // totalPrc
             // 
             this.totalPrc.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.totalPrc.Location = new System.Drawing.Point(94, 405);
+            this.totalPrc.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPrc.Location = new System.Drawing.Point(83, 408);
             this.totalPrc.Name = "totalPrc";
-            this.totalPrc.Size = new System.Drawing.Size(91, 22);
+            this.totalPrc.Size = new System.Drawing.Size(101, 25);
             this.totalPrc.TabIndex = 26;
+            this.totalPrc.Text = "0";
+            this.totalPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(33, 408);
+            this.label27.Location = new System.Drawing.Point(18, 411);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(53, 17);
             this.label27.TabIndex = 25;
@@ -415,72 +469,87 @@
             // 
             // dozerAmnt
             // 
-            this.dozerAmnt.Location = new System.Drawing.Point(315, 374);
+            this.dozerAmnt.Location = new System.Drawing.Point(327, 374);
             this.dozerAmnt.Name = "dozerAmnt";
             this.dozerAmnt.Size = new System.Drawing.Size(77, 22);
             this.dozerAmnt.TabIndex = 24;
+            this.dozerAmnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // exAmnt
             // 
-            this.exAmnt.Location = new System.Drawing.Point(315, 347);
+            this.exAmnt.Location = new System.Drawing.Point(327, 346);
             this.exAmnt.Name = "exAmnt";
             this.exAmnt.Size = new System.Drawing.Size(77, 22);
             this.exAmnt.TabIndex = 23;
+            this.exAmnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dumpAmnt
             // 
-            this.dumpAmnt.Location = new System.Drawing.Point(315, 320);
+            this.dumpAmnt.Location = new System.Drawing.Point(327, 320);
             this.dumpAmnt.Name = "dumpAmnt";
             this.dumpAmnt.Size = new System.Drawing.Size(77, 22);
             this.dumpAmnt.TabIndex = 22;
+            this.dumpAmnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dozerPrc
             // 
-            this.dozerPrc.Location = new System.Drawing.Point(206, 374);
+            this.dozerPrc.Location = new System.Drawing.Point(172, 374);
             this.dozerPrc.Name = "dozerPrc";
-            this.dozerPrc.Size = new System.Drawing.Size(83, 22);
+            this.dozerPrc.Size = new System.Drawing.Size(63, 22);
             this.dozerPrc.TabIndex = 21;
+            this.dozerPrc.Text = "5500";
+            this.dozerPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // exPrc
             // 
-            this.exPrc.Location = new System.Drawing.Point(206, 348);
+            this.exPrc.Location = new System.Drawing.Point(172, 346);
             this.exPrc.Name = "exPrc";
-            this.exPrc.Size = new System.Drawing.Size(83, 22);
+            this.exPrc.Size = new System.Drawing.Size(63, 22);
             this.exPrc.TabIndex = 20;
+            this.exPrc.Text = "5000";
+            this.exPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dumpPrc
             // 
-            this.dumpPrc.Location = new System.Drawing.Point(206, 321);
+            this.dumpPrc.Location = new System.Drawing.Point(172, 321);
             this.dumpPrc.Name = "dumpPrc";
-            this.dumpPrc.Size = new System.Drawing.Size(82, 22);
+            this.dumpPrc.Size = new System.Drawing.Size(63, 22);
             this.dumpPrc.TabIndex = 19;
+            this.dumpPrc.Text = "2000";
+            this.dumpPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dozerQnty
             // 
-            this.dozerQnty.Location = new System.Drawing.Point(123, 374);
+            this.dozerQnty.Location = new System.Drawing.Point(112, 374);
             this.dozerQnty.Name = "dozerQnty";
-            this.dozerQnty.Size = new System.Drawing.Size(62, 22);
+            this.dozerQnty.Size = new System.Drawing.Size(43, 22);
             this.dozerQnty.TabIndex = 18;
+            this.dozerQnty.Text = "0";
+            this.dozerQnty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // exQnty
             // 
-            this.exQnty.Location = new System.Drawing.Point(123, 348);
+            this.exQnty.Location = new System.Drawing.Point(112, 347);
             this.exQnty.Name = "exQnty";
-            this.exQnty.Size = new System.Drawing.Size(61, 22);
+            this.exQnty.Size = new System.Drawing.Size(43, 22);
             this.exQnty.TabIndex = 17;
+            this.exQnty.Text = "0";
+            this.exQnty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dumpQnty
             // 
-            this.dumpQnty.Location = new System.Drawing.Point(122, 320);
+            this.dumpQnty.Location = new System.Drawing.Point(112, 320);
             this.dumpQnty.Name = "dumpQnty";
-            this.dumpQnty.Size = new System.Drawing.Size(63, 22);
+            this.dumpQnty.Size = new System.Drawing.Size(41, 22);
             this.dumpQnty.TabIndex = 16;
+            this.dumpQnty.Text = "0";
+            this.dumpQnty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(312, 300);
+            this.label26.Location = new System.Drawing.Point(335, 300);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 13);
             this.label26.TabIndex = 15;
@@ -490,7 +559,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(199, 300);
+            this.label25.Location = new System.Drawing.Point(155, 300);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(90, 13);
             this.label25.TabIndex = 14;
@@ -500,26 +569,25 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(120, 300);
+            this.label24.Location = new System.Drawing.Point(116, 300);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 13);
+            this.label24.Size = new System.Drawing.Size(33, 13);
             this.label24.TabIndex = 13;
-            this.label24.Text = "Quantity";
+            this.label24.Text = "Qnty";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(33, 380);
+            this.label23.Location = new System.Drawing.Point(15, 377);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(52, 15);
             this.label23.TabIndex = 12;
             this.label23.Text = "Dozers";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(33, 351);
+            this.label22.Location = new System.Drawing.Point(14, 350);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(74, 15);
             this.label22.TabIndex = 11;
@@ -528,12 +596,11 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(33, 327);
+            this.label21.Location = new System.Drawing.Point(14, 324);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(93, 15);
             this.label21.TabIndex = 10;
             this.label21.Text = "Dump Truck";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label20
             // 
@@ -561,6 +628,8 @@
             this.discount.Name = "discount";
             this.discount.Size = new System.Drawing.Size(102, 22);
             this.discount.TabIndex = 6;
+            this.discount.Text = "0";
+            this.discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.discount.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // payDate
@@ -582,12 +651,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(18, 79);
+            this.label18.Location = new System.Drawing.Point(18, 74);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(68, 15);
+            this.label18.Size = new System.Drawing.Size(101, 15);
             this.label18.TabIndex = 3;
-            this.label18.Text = "Discount";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
+            this.label18.Text = "Discount (K) :";
             // 
             // payMethod
             // 
@@ -599,7 +667,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 53);
+            this.label17.Location = new System.Drawing.Point(18, 47);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(118, 15);
             this.label17.TabIndex = 1;
@@ -616,59 +684,65 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Payment Information";
             // 
-            // checkBox1
+            // printBtn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(37, 146);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 21);
-            this.checkBox1.TabIndex = 29;
-            this.checkBox1.Text = "Can Charge Credit";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.printBtn.BackColor = System.Drawing.Color.Yellow;
+            this.printBtn.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printBtn.Location = new System.Drawing.Point(361, 511);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(137, 28);
+            this.printBtn.TabIndex = 27;
+            this.printBtn.Text = "Print Receipt";
+            this.printBtn.UseVisualStyleBackColor = false;
+            this.printBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox2
+            // label28
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(37, 166);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(100, 21);
-            this.checkBox2.TabIndex = 30;
-            this.checkBox2.Text = "Terms Credit";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(251, 300);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(57, 13);
+            this.label28.TabIndex = 34;
+            this.label28.Text = "Discount";
             // 
-            // checkBox3
+            // dumpdis
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(36, 191);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(113, 21);
-            this.checkBox3.TabIndex = 31;
-            this.checkBox3.Text = "Account on hold";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.dumpdis.Location = new System.Drawing.Point(254, 321);
+            this.dumpdis.Name = "dumpdis";
+            this.dumpdis.Size = new System.Drawing.Size(54, 22);
+            this.dumpdis.TabIndex = 35;
+            this.dumpdis.Text = "0";
+            this.dumpdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkBox4
+            // exdis
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(37, 218);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(118, 21);
-            this.checkBox4.TabIndex = 32;
-            this.checkBox4.Text = "Restrict Mailing";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.exdis.Location = new System.Drawing.Point(254, 349);
+            this.exdis.Name = "exdis";
+            this.exdis.Size = new System.Drawing.Size(54, 22);
+            this.exdis.TabIndex = 36;
+            this.exdis.Text = "0";
+            this.exdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dozerdis
+            // 
+            this.dozerdis.Location = new System.Drawing.Point(254, 375);
+            this.dozerdis.Name = "dozerdis";
+            this.dozerdis.Size = new System.Drawing.Size(54, 22);
+            this.dozerdis.TabIndex = 37;
+            this.dozerdis.Text = "0";
+            this.dozerdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(851, 507);
+            this.ClientSize = new System.Drawing.Size(851, 541);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.printBtn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -712,9 +786,8 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox totalPrc;
+        private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
@@ -741,6 +814,12 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.TextBox totalPrc;
+        public System.Windows.Forms.Button calcBtn;
+        public System.Windows.Forms.TextBox dozerdis;
+        public System.Windows.Forms.TextBox exdis;
+        public System.Windows.Forms.TextBox dumpdis;
+        private System.Windows.Forms.Label label28;
     }
 }
 

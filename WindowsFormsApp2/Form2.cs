@@ -28,23 +28,20 @@ namespace WindowsFormsApp2
 
             dumpQntyLbl.Text = f1.dumpQnty.Text;
             dumpPrcLbl.Text = f1.dumpPrc.Text;
+            dumpdisLbl.Text = f1.dumpdis.Text;
             dumpAmntLbl.Text = f1.dumpAmnt.Text;
 
             ExQntyLbl.Text = f1.exQnty.Text;
             exPrcLbl.Text = f1.exPrc.Text;
+            exAmntLbl.Text = f1.exdis.Text;
             exAmntLbl.Text = f1.exAmnt.Text;
 
             dozerQntyLbl.Text = f1.dozerQnty.Text;
             dozerPrcLbl.Text = f1.dozerPrc.Text;
+            dozerdisLbl.Text = f1.dozerdis.Text;
             dozerAmntLbl.Text = f1.dozerAmnt.Text;
 
-
-
-        }
-
-        private void exAmntLbl_Click(object sender, EventArgs e)
-        {
-
+            finalPaymentLbl.Text = f1.totalPrc.Text;
         }
     }
 }

@@ -58,9 +58,13 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.finalPaymentLbl = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.Amount = new System.Windows.Forms.Label();
+            this.dumpdisLbl = new System.Windows.Forms.Label();
+            this.exvadisLbl = new System.Windows.Forms.Label();
+            this.dozerdisLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 142);
+            this.label5.Location = new System.Drawing.Point(40, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 4;
@@ -114,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 180);
+            this.label6.Location = new System.Drawing.Point(40, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 5;
@@ -123,7 +127,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 233);
+            this.label7.Location = new System.Drawing.Point(40, 233);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 6;
@@ -132,7 +136,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 269);
+            this.label8.Location = new System.Drawing.Point(40, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 7;
@@ -173,7 +177,7 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label12.Location = new System.Drawing.Point(286, 331);
+            this.label12.Location = new System.Drawing.Point(334, 331);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 13);
@@ -184,38 +188,38 @@
             // customerName
             // 
             this.customerName.AutoSize = true;
-            this.customerName.Location = new System.Drawing.Point(208, 142);
+            this.customerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerName.Location = new System.Drawing.Point(178, 142);
             this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(41, 13);
+            this.customerName.Size = new System.Drawing.Size(0, 13);
             this.customerName.TabIndex = 12;
-            this.customerName.Text = "label13";
             // 
             // customerAddress
             // 
             this.customerAddress.AutoSize = true;
-            this.customerAddress.Location = new System.Drawing.Point(208, 180);
+            this.customerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerAddress.Location = new System.Drawing.Point(178, 180);
             this.customerAddress.Name = "customerAddress";
-            this.customerAddress.Size = new System.Drawing.Size(41, 13);
+            this.customerAddress.Size = new System.Drawing.Size(0, 13);
             this.customerAddress.TabIndex = 13;
-            this.customerAddress.Text = "label14";
             // 
             // datePay
             // 
             this.datePay.AutoSize = true;
-            this.datePay.Location = new System.Drawing.Point(208, 233);
+            this.datePay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePay.Location = new System.Drawing.Point(178, 233);
             this.datePay.Name = "datePay";
-            this.datePay.Size = new System.Drawing.Size(41, 13);
+            this.datePay.Size = new System.Drawing.Size(0, 13);
             this.datePay.TabIndex = 14;
-            this.datePay.Text = "label15";
             // 
             // payMethodLbl
             // 
             this.payMethodLbl.AutoSize = true;
-            this.payMethodLbl.Location = new System.Drawing.Point(208, 269);
+            this.payMethodLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payMethodLbl.Location = new System.Drawing.Point(178, 269);
             this.payMethodLbl.Name = "payMethodLbl";
-            this.payMethodLbl.Size = new System.Drawing.Size(41, 13);
+            this.payMethodLbl.Size = new System.Drawing.Size(0, 15);
             this.payMethodLbl.TabIndex = 15;
-            this.payMethodLbl.Text = "label16";
             // 
             // dumpQntyLbl
             // 
@@ -239,7 +243,7 @@
             // 
             // dumpAmntLbl
             // 
-            this.dumpAmntLbl.Location = new System.Drawing.Point(286, 345);
+            this.dumpAmntLbl.Location = new System.Drawing.Point(334, 345);
             this.dumpAmntLbl.Margin = new System.Windows.Forms.Padding(0);
             this.dumpAmntLbl.Name = "dumpAmntLbl";
             this.dumpAmntLbl.Size = new System.Drawing.Size(58, 23);
@@ -269,14 +273,14 @@
             // 
             // exAmntLbl
             // 
-            this.exAmntLbl.Location = new System.Drawing.Point(286, 366);
+            this.exAmntLbl.Location = new System.Drawing.Point(334, 366);
             this.exAmntLbl.Margin = new System.Windows.Forms.Padding(0);
             this.exAmntLbl.Name = "exAmntLbl";
             this.exAmntLbl.Size = new System.Drawing.Size(58, 17);
             this.exAmntLbl.TabIndex = 21;
             this.exAmntLbl.Text = "0";
             this.exAmntLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.exAmntLbl.Click += new System.EventHandler(this.exAmntLbl_Click);
+            
             // 
             // dozerQntyLbl
             // 
@@ -300,7 +304,7 @@
             // 
             // dozerAmntLbl
             // 
-            this.dozerAmntLbl.Location = new System.Drawing.Point(286, 383);
+            this.dozerAmntLbl.Location = new System.Drawing.Point(334, 385);
             this.dozerAmntLbl.Margin = new System.Windows.Forms.Padding(0);
             this.dozerAmntLbl.Name = "dozerAmntLbl";
             this.dozerAmntLbl.Size = new System.Drawing.Size(58, 17);
@@ -344,25 +348,25 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Yellow;
             this.label29.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(208, 412);
+            this.label29.Location = new System.Drawing.Point(178, 412);
             this.label29.Margin = new System.Windows.Forms.Padding(0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(47, 15);
+            this.label29.Size = new System.Drawing.Size(73, 15);
             this.label29.TabIndex = 28;
-            this.label29.Text = "Total:";
+            this.label29.Text = "Total (K):";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // finalPaymentLbl
             // 
-            this.label30.BackColor = System.Drawing.Color.Yellow;
-            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(255, 412);
-            this.label30.Margin = new System.Windows.Forms.Padding(0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(79, 15);
-            this.label30.TabIndex = 29;
-            this.label30.Text = "label30";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.finalPaymentLbl.BackColor = System.Drawing.Color.Yellow;
+            this.finalPaymentLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalPaymentLbl.Location = new System.Drawing.Point(251, 412);
+            this.finalPaymentLbl.Margin = new System.Windows.Forms.Padding(0);
+            this.finalPaymentLbl.Name = "finalPaymentLbl";
+            this.finalPaymentLbl.Size = new System.Drawing.Size(83, 15);
+            this.finalPaymentLbl.TabIndex = 29;
+            this.finalPaymentLbl.Text = "0";
+            this.finalPaymentLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label31
             // 
@@ -383,14 +387,59 @@
             this.label32.TabIndex = 31;
             this.label32.Text = resources.GetString("label32.Text");
             // 
+            // Amount
+            // 
+            this.Amount.AutoSize = true;
+            this.Amount.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Amount.Location = new System.Drawing.Point(286, 331);
+            this.Amount.Margin = new System.Windows.Forms.Padding(0);
+            this.Amount.Name = "Amount";
+            this.Amount.Size = new System.Drawing.Size(49, 13);
+            this.Amount.TabIndex = 32;
+            this.Amount.Text = "Discount";
+            // 
+            // dumpdisLbl
+            // 
+            this.dumpdisLbl.AutoSize = true;
+            this.dumpdisLbl.Location = new System.Drawing.Point(286, 350);
+            this.dumpdisLbl.Name = "dumpdisLbl";
+            this.dumpdisLbl.Size = new System.Drawing.Size(13, 13);
+            this.dumpdisLbl.TabIndex = 33;
+            this.dumpdisLbl.Text = "0";
+            // 
+            // exvadisLbl
+            // 
+            this.exvadisLbl.AutoSize = true;
+            this.exvadisLbl.Location = new System.Drawing.Point(286, 368);
+            this.exvadisLbl.Name = "exvadisLbl";
+            this.exvadisLbl.Size = new System.Drawing.Size(13, 13);
+            this.exvadisLbl.TabIndex = 34;
+            this.exvadisLbl.Text = "0";
+            this.exvadisLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dozerdisLbl
+            // 
+            this.dozerdisLbl.AutoSize = true;
+            this.dozerdisLbl.Location = new System.Drawing.Point(286, 387);
+            this.dozerdisLbl.Name = "dozerdisLbl";
+            this.dozerdisLbl.Size = new System.Drawing.Size(13, 13);
+            this.dozerdisLbl.TabIndex = 35;
+            this.dozerdisLbl.Text = "0";
+            this.dozerdisLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 534);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(426, 534);
+            this.Controls.Add(this.dozerdisLbl);
+            this.Controls.Add(this.exvadisLbl);
+            this.Controls.Add(this.dumpdisLbl);
+            this.Controls.Add(this.Amount);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.label31);
-            this.Controls.Add(this.label30);
+            this.Controls.Add(this.finalPaymentLbl);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
@@ -458,9 +507,13 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label finalPaymentLbl;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         public System.Windows.Forms.Label customerName;
+        private System.Windows.Forms.Label Amount;
+        private System.Windows.Forms.Label dumpdisLbl;
+        private System.Windows.Forms.Label exvadisLbl;
+        private System.Windows.Forms.Label dozerdisLbl;
     }
 }
