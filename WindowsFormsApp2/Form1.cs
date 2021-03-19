@@ -32,7 +32,126 @@ namespace WindowsFormsApp2
 
         }
 
+        // Error Messages
+        private void firstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(firstName.Text))
+            {
+                e.Cancel = true;
+                firstName.Focus();
+                fNameerror.SetError(firstName, "Please Enter First Name");
+            }
+            else
+            {
+                e.Cancel = false;
+                fNameerror.SetError(firstName, null);
+            }
+        }
 
+        private void lastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(lastName.Text))
+            {
+                e.Cancel = true;
+                lastName.Focus();
+                lNameerror.SetError(lastName, "Please Enter Last Name");
+            }
+            else
+            {
+                e.Cancel = false;
+                lNameerror.SetError(lastName, null);
+            }
+        }
+
+        private void strtAdd_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(strtAdd.Text))
+            {
+                e.Cancel = true;
+                strtAdd.Focus();
+                strtAddError.SetError(strtAdd, "Please Enter Street Address");
+            }
+            else
+            {
+                e.Cancel = false;
+                strtAddError.SetError(strtAdd, null);
+            }
+        }
+
+        private void city_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(city.Text))
+            {
+                e.Cancel = true;
+                city.Focus();
+                cityError.SetError(city, "Please Enter City");
+            }
+            else
+            {
+                e.Cancel = false;
+                cityError.SetError(city, null);
+            }
+        }
+
+        private void state_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(state.Text))
+            {
+                e.Cancel = true;
+                state.Focus();
+                stateError.SetError(state, "Please Enter State");
+            }
+            else
+            {
+                e.Cancel = false;
+                stateError.SetError(state, null);
+            }
+        }
+
+        private void postal_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(postal.Text))
+            {
+                e.Cancel = true;
+                postal.Focus();
+                postalError.SetError(postal, "Please Enter Postal");
+            }
+            else
+            {
+                e.Cancel = false;
+                postalError.SetError(postal, null);
+            }
+        }
+
+        private void phn1_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(phn1.Text))
+            {
+                e.Cancel = true;
+                phn1.Focus();
+                phn1Error.SetError(phn1, "Please Enter Phone Number");
+            }
+            else
+            {
+                e.Cancel = false;
+                phn1Error.SetError(phn1, null);
+            }
+        }
+
+        private void payMethod_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(payMethod.Text))
+            {
+                e.Cancel = true;
+                payMethod.Focus();
+                methodError.SetError(payMethod, "Please Enter Payment Method");
+            }
+            else
+            {
+                e.Cancel = false;
+                methodError.SetError(payMethod, null);
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -49,13 +168,13 @@ namespace WindowsFormsApp2
             discount.Text = String.Empty;
             payDate.Text = String.Empty;
             dumpQnty.Text = String.Empty;
-          
+            dumpdis.Text = String.Empty;
             dumpAmnt.Text = String.Empty;
             exQnty.Text = String.Empty;
-            
+            exdis.Text = String.Empty;
             exAmnt.Text = String.Empty;
             dozerQnty.Text = String.Empty;
-            
+            dozerdis.Text = String.Empty;
             dozerAmnt.Text = String.Empty;
             totalPrc.Text = String.Empty;
             checkBox1.Checked = false;
@@ -63,15 +182,18 @@ namespace WindowsFormsApp2
             checkBox3.Checked = false;
             checkBox4.Checked = false;
 
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Show receipt
-            Form2 receipt = new Form2(this);
-            receipt.ShowDialog();
-            
+            if (ValidateChildren(ValidationConstraints.Enabled)){
+                // Show receipt
+                Form2 receipt = new Form2(this);
+                receipt.ShowDialog();
+            }
+
+           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -160,7 +282,6 @@ namespace WindowsFormsApp2
             //display in textbox
             discount.Text = totaldis.ToString();
 
-
             // Instantiate new variables and assign to respective 
             // Convert total amounts to double from string
             // Calculating Total Payment
@@ -173,8 +294,6 @@ namespace WindowsFormsApp2
             double totalPayment = truckTotal + exTotal + dozerTotal;
             // Display in textbox
             totalPrc.Text = totalPayment.ToString();
-
-           
         }
     }
 }

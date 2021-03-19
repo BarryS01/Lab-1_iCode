@@ -171,13 +171,13 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 13);
             this.label11.TabIndex = 10;
-            this.label11.Text = "Price / Day (K)";
+            this.label11.Text = "Price (K) / Day";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label12.Location = new System.Drawing.Point(334, 331);
+            this.label12.Location = new System.Drawing.Point(351, 331);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 13);
@@ -280,7 +280,6 @@
             this.exAmntLbl.TabIndex = 21;
             this.exAmntLbl.Text = "0";
             this.exAmntLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // dozerQntyLbl
             // 
@@ -394,9 +393,9 @@
             this.Amount.Location = new System.Drawing.Point(286, 331);
             this.Amount.Margin = new System.Windows.Forms.Padding(0);
             this.Amount.Name = "Amount";
-            this.Amount.Size = new System.Drawing.Size(49, 13);
+            this.Amount.Size = new System.Drawing.Size(65, 13);
             this.Amount.TabIndex = 32;
-            this.Amount.Text = "Discount";
+            this.Amount.Text = "Discount (K)";
             // 
             // dumpdisLbl
             // 

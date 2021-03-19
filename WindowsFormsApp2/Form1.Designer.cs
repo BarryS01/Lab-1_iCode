@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -53,6 +54,10 @@
             this.firstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.dozerdis = new System.Windows.Forms.TextBox();
+            this.exdis = new System.Windows.Forms.TextBox();
+            this.dumpdis = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.calcBtn = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -86,14 +91,26 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
-            this.dumpdis = new System.Windows.Forms.TextBox();
-            this.exdis = new System.Windows.Forms.TextBox();
-            this.dozerdis = new System.Windows.Forms.TextBox();
+            this.fNameerror = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lNameerror = new System.Windows.Forms.ErrorProvider(this.components);
+            this.strtAddError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cityError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.stateError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.postalError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.phn1Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.methodError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fNameerror)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lNameerror)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.strtAddError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stateError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postalError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phn1Error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.methodError)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -241,6 +258,7 @@
             this.phn1.Name = "phn1";
             this.phn1.Size = new System.Drawing.Size(131, 22);
             this.phn1.TabIndex = 16;
+            this.phn1.Validating += new System.ComponentModel.CancelEventHandler(this.phn1_Validating);
             // 
             // label12
             // 
@@ -267,6 +285,7 @@
             this.postal.Name = "postal";
             this.postal.Size = new System.Drawing.Size(192, 22);
             this.postal.TabIndex = 13;
+            this.postal.Validating += new System.ComponentModel.CancelEventHandler(this.postal_Validating);
             // 
             // label10
             // 
@@ -283,6 +302,7 @@
             this.state.Name = "state";
             this.state.Size = new System.Drawing.Size(131, 22);
             this.state.TabIndex = 11;
+            this.state.Validating += new System.ComponentModel.CancelEventHandler(this.state_Validating);
             // 
             // label9
             // 
@@ -300,6 +320,7 @@
             this.city.Size = new System.Drawing.Size(131, 22);
             this.city.TabIndex = 9;
             this.city.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.city.Validating += new System.ComponentModel.CancelEventHandler(this.city_Validating);
             // 
             // label8
             // 
@@ -316,6 +337,7 @@
             this.strtAdd.Name = "strtAdd";
             this.strtAdd.Size = new System.Drawing.Size(321, 22);
             this.strtAdd.TabIndex = 7;
+            this.strtAdd.Validating += new System.ComponentModel.CancelEventHandler(this.strtAdd_Validating);
             // 
             // label7
             // 
@@ -351,6 +373,7 @@
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(131, 22);
             this.lastName.TabIndex = 3;
+            this.lastName.Validating += new System.ComponentModel.CancelEventHandler(this.lastName_Validating);
             // 
             // firstName
             // 
@@ -358,6 +381,7 @@
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(131, 22);
             this.firstName.TabIndex = 2;
+            this.firstName.Validating += new System.ComponentModel.CancelEventHandler(this.firstName_Validating);
             // 
             // label4
             // 
@@ -379,6 +403,43 @@
             this.label3.Size = new System.Drawing.Size(178, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Customer Information";
+            // 
+            // dozerdis
+            // 
+            this.dozerdis.Location = new System.Drawing.Point(254, 375);
+            this.dozerdis.Name = "dozerdis";
+            this.dozerdis.Size = new System.Drawing.Size(54, 22);
+            this.dozerdis.TabIndex = 37;
+            this.dozerdis.Text = "0";
+            this.dozerdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // exdis
+            // 
+            this.exdis.Location = new System.Drawing.Point(254, 349);
+            this.exdis.Name = "exdis";
+            this.exdis.Size = new System.Drawing.Size(54, 22);
+            this.exdis.TabIndex = 36;
+            this.exdis.Text = "0";
+            this.exdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dumpdis
+            // 
+            this.dumpdis.Location = new System.Drawing.Point(254, 321);
+            this.dumpdis.Name = "dumpdis";
+            this.dumpdis.Size = new System.Drawing.Size(54, 22);
+            this.dumpdis.TabIndex = 35;
+            this.dumpdis.Text = "0";
+            this.dumpdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(251, 300);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(77, 13);
+            this.label28.TabIndex = 34;
+            this.label28.Text = "Discount (K)";
             // 
             // calcBtn
             // 
@@ -561,9 +622,9 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(155, 300);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(90, 13);
+            this.label25.Size = new System.Drawing.Size(92, 13);
             this.label25.TabIndex = 14;
-            this.label25.Text = "Price / day (K)";
+            this.label25.Text = "Price (K) / Day";
             // 
             // label24
             // 
@@ -663,6 +724,7 @@
             this.payMethod.Name = "payMethod";
             this.payMethod.Size = new System.Drawing.Size(102, 22);
             this.payMethod.TabIndex = 2;
+            this.payMethod.Validating += new System.ComponentModel.CancelEventHandler(this.payMethod_Validating);
             // 
             // label17
             // 
@@ -696,42 +758,37 @@
             this.printBtn.UseVisualStyleBackColor = false;
             this.printBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label28
+            // fNameerror
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(251, 300);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(57, 13);
-            this.label28.TabIndex = 34;
-            this.label28.Text = "Discount";
+            this.fNameerror.ContainerControl = this;
             // 
-            // dumpdis
+            // lNameerror
             // 
-            this.dumpdis.Location = new System.Drawing.Point(254, 321);
-            this.dumpdis.Name = "dumpdis";
-            this.dumpdis.Size = new System.Drawing.Size(54, 22);
-            this.dumpdis.TabIndex = 35;
-            this.dumpdis.Text = "0";
-            this.dumpdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lNameerror.ContainerControl = this;
             // 
-            // exdis
+            // strtAddError
             // 
-            this.exdis.Location = new System.Drawing.Point(254, 349);
-            this.exdis.Name = "exdis";
-            this.exdis.Size = new System.Drawing.Size(54, 22);
-            this.exdis.TabIndex = 36;
-            this.exdis.Text = "0";
-            this.exdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.strtAddError.ContainerControl = this;
             // 
-            // dozerdis
+            // cityError
             // 
-            this.dozerdis.Location = new System.Drawing.Point(254, 375);
-            this.dozerdis.Name = "dozerdis";
-            this.dozerdis.Size = new System.Drawing.Size(54, 22);
-            this.dozerdis.TabIndex = 37;
-            this.dozerdis.Text = "0";
-            this.dozerdis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cityError.ContainerControl = this;
+            // 
+            // stateError
+            // 
+            this.stateError.ContainerControl = this;
+            // 
+            // postalError
+            // 
+            this.postalError.ContainerControl = this;
+            // 
+            // phn1Error
+            // 
+            this.phn1Error.ContainerControl = this;
+            // 
+            // methodError
+            // 
+            this.methodError.ContainerControl = this;
             // 
             // Form1
             // 
@@ -751,6 +808,14 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fNameerror)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lNameerror)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.strtAddError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stateError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postalError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phn1Error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.methodError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,6 +885,14 @@
         public System.Windows.Forms.TextBox exdis;
         public System.Windows.Forms.TextBox dumpdis;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ErrorProvider fNameerror;
+        private System.Windows.Forms.ErrorProvider lNameerror;
+        private System.Windows.Forms.ErrorProvider strtAddError;
+        private System.Windows.Forms.ErrorProvider cityError;
+        private System.Windows.Forms.ErrorProvider stateError;
+        private System.Windows.Forms.ErrorProvider postalError;
+        private System.Windows.Forms.ErrorProvider phn1Error;
+        private System.Windows.Forms.ErrorProvider methodError;
     }
 }
 
